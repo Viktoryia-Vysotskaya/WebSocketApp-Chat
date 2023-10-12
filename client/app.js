@@ -10,3 +10,17 @@ const messageContentInput = document.querySelector('#message-content');
 // Global variables
 
 let userName = '';
+
+// Functions
+
+const login = (e) => {
+    e.preventDefault();
+    if (!userNameInput.value) {
+        alert('Please enter a username');
+    } else {
+        userName = userNameInput.value;
+        loginForm.classList.remove('show');
+        messagesSection.classList.add('show');
+        addMessageForm.classList.add('show');
+    }
+};
