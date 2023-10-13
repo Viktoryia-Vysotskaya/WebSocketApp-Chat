@@ -1,8 +1,9 @@
 {
     "use strict";
 
-    // References to HTML elements
+    const socket = io();
 
+    // References to HTML elements
     const loginForm = document.querySelector('#welcome-form');
     const messagesSection = document.querySelector('#messages-section');
     const messagesList = document.querySelector('#messages-list');
@@ -10,11 +11,9 @@
     const userNameInput = document.querySelector('#username');
     const messageContentInput = document.querySelector('#message-content');
 
-    // Global variables
+    let userName = ''; // Global variables
 
-    let userName = '';
-
-    // Functions
+    socket.on('message', ({ author, content }) => addMessage(author, content));
 
     const login = (e) => {
         e.preventDefault();
@@ -54,7 +53,6 @@
     };
 
     // Event listeners
-
     loginForm.addEventListener("submit", (e) => login(e));
     addMessageForm.addEventListener("submit", (e) => sendMessage(e));
 
