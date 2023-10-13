@@ -1,58 +1,86 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 body {
-    background: #282c34;
-    color: #fff;
+    background: linear-gradient(to right, #282c34, #ffffff);
+    color: #000000;
     font-family: 'Open Sans', sans-serif;
     padding: 30px;
     text-align: center;
 }
 
 h1 {
-    font-weight: lighter;
+    font-weight: 900;
+    font-size: 50px;
+    text-shadow: 2px 2px 0 #ffffff;
+    animation: zoomInOut 3s 3;
 }
 
-p {
-    color: #999;
-    font-size: 0.8rem;
+@keyframes zoomInOut {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 24px;
+    text-shadow: 1px 1px 0 #ffffff;
+    margin-bottom: 40px;
 }
 
 .btn {
-    background: #0064e7;
-    border: none;
+    background: #3abdae;
     border-radius: 15px;
     padding: 10px 25px;
-    color: #fff;
+    color: #000000;
     font-family: inherit;
-    margin: 20px 10px;
+    font-size: 16px;
+    margin: 20px 50px;
     text-transform: uppercase;
     outline: none;
     transition: .2s;
     cursor: pointer;
+    border: 2px solid #000000;
 }
 
 .btn:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px #ffffff;
 }
 
 .text-input {
-    background: none;
+    background: #f7f7f1;
     border: none;
-    color: #fff;
-    border-bottom: 2px solid #0064e7;
+    color: #000000;
+    border-bottom: 2px solid #3abdae;
     padding: 8px 25px 8px 5px;
     font-family: inherit;
     outline: none;
     opacity: 0.6;
     transition: .3s;
+    box-shadow: 0 0 20px #ffffff;
+    text-align: center;
 }
 
 .text-input:focus {
     opacity: 1;
+    background-color: #a9e9e2;
+    color: #000000;
+}
+
+.text-input::placeholder {
+    color: #149384;
+    text-align: center;
 }
 
 .welcome-form {
     display: none;
+    margin-top: 100px;
 }
 
 .messages-section {
@@ -64,7 +92,17 @@ p {
     max-width: 400px;
     list-style-type: none;
     padding: 0;
-    margin: 20px auto 40px auto;
+    margin: 50px auto 40px auto;
+}
+
+#add-messages-form {
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    transform: translateX(0);
+    padding: 10px;
+    margin-bottom: 60px;
+    z-index: 1;
 }
 
 .message {
@@ -86,22 +124,35 @@ p {
 .message__author {
     font-size: 0.8rem;
     font-weight: bold;
-    color: #999;
+    color: #ffffff;
     text-align: right;
+    text-shadow:
+        -1px -1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px 1px 0 #000000,
+        1px 1px 0 #000000;
 }
 
 .message__content {
-    background: rgb(68, 68, 68);
+    background: #3abdae;
     border: none;
     border-radius: 15px 5px 15px 15px;
     padding: 10px 25px;
     color: #fff;
     font-size: 0.9rem;
     max-width: 200px;
+    box-shadow: 0 0 20px #000000;
+    text-align: center;
+}
+
+.message--bot .message__content {
+    background-color: #b198e0;
+    color: #000000;
 }
 
 .message--self .message__content {
-    background: #3498db;
+    background: #262424;
+    box-shadow: 0 0 20px #ffffff;
 }
 
 .show {
