@@ -2,6 +2,10 @@
 
 ➱ WebSockets
 
+💻 Live demo: https://d38f3b4d-3642-450e-811a-8c163542e4c5-00-2gftzwg292v7.picard.replit.dev
+
+(!) Free hosting so might take a while to load for first time.
+
 👀 Screenshots:
 
 📸 ↴︎
